@@ -1,0 +1,9 @@
+<h1>Races</h1>
+<hr>
+<% @races.each do |race| %>
+  <h2><%=link_to race.name, race_path(race) %></h2>
+  <p><%= race.location %></p>
+  <p><%= race.length %></p>
+<% end%>
+
+<p><%= button_to "Add A Race", new_race_path, method: :get%></p>

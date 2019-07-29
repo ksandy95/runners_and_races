@@ -1,0 +1,12 @@
+<h1>Race Show Page</h1>
+<hr>
+
+<h2><%= @race.name %></h2>
+<h3><%= @race.location %></h3>
+<h3><%= @race.length %></h3>
+
+<% @race.race_runners.each do |race_runner| %>
+  <h3>Racer: <%= link_to race_runner.runner.name, runner_path(race_runner.runner) %></h3>
+  <p>Finish Time: <%= race_runner.runner_time %> hours</p>
+  <p>Place: <%= race_runner.runner_place %></p>
+<% end %>
